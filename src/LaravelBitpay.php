@@ -43,7 +43,17 @@ class LaravelBitpay
 
         return (new self())->client->createInvoice($invoice);
     }
-
+    
+    /**
+     * @param string $invoiceId
+     *
+     * @return \BitPaySDK\Model\Invoice\Invoice
+     */
+    public static function getInvoice($invoiceId): Invoice
+    {
+        return (new self())->client->getInvoice($invoiceId);
+    }
+    
     /**
      * @return \BitPaySDK\Model\Bill\Item
      */
